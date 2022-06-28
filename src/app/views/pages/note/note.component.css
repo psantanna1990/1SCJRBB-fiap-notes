@@ -14,14 +14,22 @@ article p:first-child {
   margin-bottom: 10px;
 }
 
+article .note-text {
+  height: 100%;
+} 
+
+article .icons-container {
+  position: relative;
+}
+
 article .material-icons {
-  position: absolute;
   bottom: 5px;
   right: 5px;
 
   font-size: 32px;
   cursor: pointer;
   transition: 0.2s;
+  float: right;
 }
 
 article .material-icons:hover {
@@ -29,10 +37,21 @@ article .material-icons:hover {
   transform: scale(1.1);
   transform: rotate(360deg);
 }
+/* 
+article .edit-text {
+  resize: none;
+  outline: none;
+  height: 65%;
+  background-color: #764455;
+  color: rgb(235, 222, 222);
+  font-size: medium;
+
+} */
 
 #priority {
   position: absolute;
   bottom: 5px;
   left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
 }
