@@ -1,16 +1,8 @@
-<article>
-  <p>{{noteProp.date | date: "dd/MM/yyyy hh:mm"}}</p>
-  <!-- <p>{{noteProp.text}}</p> -->
-
-  <p *ngIf="!isEdit; else elseBlock" class="note-text">{{noteProp.text}}</p>
-  <ng-template #elseBlock>
-    <textarea aria-label="edit" id="edit" autofocus rows="5" class="edit-text"></textarea>
-  </ng-template>
+<article id="{{noteProp.id}}">
+  <p>{{noteProp.date | date: "dd/MM/yyyy hh:mm:ss"}}</p>
+  <p>{{noteProp.text}}</p>
 
 
-  <span *ngIf="noteProp.urgent" class="material-icons" id="priority">priority_high</span>
-  <span class="material-icons" (click)="confirmRemove()"> delete_forever </span>
-  <span class="material-icons" (click)="editar()"> edit </span>
-  <span *ngIf="isEdit" class="material-icons" (click)="alterar()"> save </span>
-
+  <span class="material-icons edit" (click)="editNote(noteProp)"  id="{{noteProp.id}}_edit"> edit </span>
+  <span class="material-icons delete" (click)="confirmRemove()" id="{{noteProp.id}}_delete">  delete_forever </span>
 </article>

@@ -7,14 +7,15 @@
       <label>Nota:</label>
       <textarea
         type="text"
-        id="input-cpf"
+        id="input-note"
         formControlName="textNote"
         required
         placeholder="Digite a nota"
+        [(ngModel)]="textNoteValue"
       ></textarea>
       <div *ngIf="textNote?.touched">
         <div class="errors" *ngIf="textNote?.errors?.['required']">
-          Este campo é obrigatório
+          Este campo é obrigatório  
         </div>
         <div class="errors" *ngIf="textNote?.errors?.['minlength']">
           Precisa ter no mínimo 5 caracteres
